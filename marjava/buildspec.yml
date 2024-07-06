@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: openjdk11  # Use OpenJDK 11 for Maven
+  pre_build:
+    commands:
+      - mvn clean  # Clean up any existing build artifacts
+  build:
+    commands:
+      - mvn package --file pom.xml  # Build your Maven project
+  post_build:
+    commands:
+      - mkdir -p deploy  # Create a directory to store artifacts
+      - cp target/*.jar deploy/application.jar  # Copy the built JAR to deployment directory
+
+artifacts:
+  files:
+    - deploy/**/*  # Specify the artifacts (JAR files) to be bundled and passed to the next stage
