@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.example.test.Main",
+            "projectName": "marjava"
+        },
+        {
+            "type": "java",
+            "name": "Launch Spring Boot",
+            "request": "launch",
+            "mainClass": "",
+            "args": "-jar target/marjava-1.0-SNAPSHOT.jar"
+        }
+    ]
+}
